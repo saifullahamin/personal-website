@@ -1,4 +1,4 @@
-# Personal Website using React (under-development) 
+# My Personal Website (under-development) 
 
 My personal website built using React & Material UI.
 
