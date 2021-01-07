@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {},
   IconButtonlogo: {
-    color: "black",
+    color: "#363636",
     fontFamily: "Sacramento, cursive",
     fontStyle: "italic",
     fontSize: 34,
@@ -112,9 +112,6 @@ const useStyles = makeStyles((theme) => ({
     },
     "&:hover": {
       background: "none",
-    },
-    "&:focus": {
-      backgroundColor: "rgb(240,240,240)",
     },
   },
 }));
