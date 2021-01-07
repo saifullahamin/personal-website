@@ -107,8 +107,14 @@ const useStyles = makeStyles((theme) => ({
   },
   menuIcon: {
     padding: 0,
+    "&:after": {
+      background: "none",
+    },
     "&:hover": {
       background: "none",
+    },
+    "&:focus": {
+      backgroundColor: "rgb(240,240,240)",
     },
   },
 }));
