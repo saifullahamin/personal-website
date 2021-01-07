@@ -11,84 +11,93 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
-// import { Link as RouterLink } from "react";
+import "./NavBar.css";
 
-const headersData = [
-  {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "Education",
-    href: "/education",
-  },
-  {
-    label: "Experience",
-    href: "/experience",
-  },
-  {
-    label: "Projects",
-    href: "/projects",
-  },
-  {
-    label: "Contact Me",
-    href: "/contact",
-  },
-];
-
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   header: {
-    backgroundColor: "white",
-    // paddingRight: "79px",
-    // paddingLeft: "118px",
-    // "@media (max-width: 900px)": {
-    //   paddingLeft: 0,
-    // },
+    backgroundColor: "rgb(250, 250, 250)",
+    // padding: 3,
+    [theme.breakpoints.down("sm")]: {
+      padding: 0,
+    },
   },
-  //   logo: {
-  //     fontFamily: "Work Sans, sans-serif",
-  //     fontWeight: 600,
-  //     color: "black",
-  //     // textAlign: "left",
-  //   },
+  logo: {},
+  IconButtonlogo: {
+    color: "black",
+    fontFamily: "Sacramento, cursive",
+    fontStyle: "italic",
+    fontSize: 34,
+    padding: 10,
+    paddingBottom: 4,
+    [theme.breakpoints.down("md")]: {
+      fontSize: 30,
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 27,
+      paddingLeft: 4,
+    },
+  },
   menuButton: {
-    fontFamily: "Open Sans, sans-serif",
-    fontWeight: 700,
-    size: "18px",
-    // marginLeft: "38px",
-    // justifyContent: "flex-end",
+    minWidth: 0,
+    color: "#363636",
+    fontWeight: 500,
+    fontSize: 17.5,
+    fontFamily: "Quicksand, sans-serif",
+    margin: 18,
+    textTransform: "none",
+    padding: 0,
+    [theme.breakpoints.down("md")]: {
+      margin: 9,
+      fontSize: 16,
+    },
+    "&:hover": {
+      background: "none",
+    },
+  },
+  mobileMenuItem: {
+    "&:focus": {
+      backgroundColor: "rgb(240,240,240)",
+    },
+    fontSize: 16,
+    padding: 3,
+    margin: 14,
+    width: "fit-content",
+    minHeight: 0,
   },
   toolbar: {
     display: "flex",
     justifyContent: "space-between",
+    width: "90%",
+    margin: "auto",
   },
-  drawerContainer: {
-    // padding: "20px 30px",
-    // background: "blue",
-    // // maxWidth: "100%",
-    // justifyContent: "center",
-    // margin: "auto",
-  },
-  drawer: {
-    // width: "100px",
-    // width: "drawerWidth",
-    // background: "red",
-    // display: "flex",
-    // justifyContent: "center",
-  },
+  drawerContainer: {},
+  drawer: {},
   mobileToolbar: {
     display: "flex",
     justifyContent: "space-between",
   },
-  IconButtonlogo: {
-    color: "black",
+
+  name: {
+    borderBottom: "1px solid currentColor",
+    display: "inline-block",
+    lineHeight: 0.85,
+    color: "#363636",
+    textShadow:
+      " 2px 2px rgb(250,250,250), 2px -2px rgb(250,250,250), -2px 2px rgb(250,250,250), -2px -2px rgb(250,250,250)",
   },
   link: {
-    // width: "300px",
+    fontFamily: "Quicksand, sans-serif",
+    color: "#363636",
+    fontSize: 10,
   },
   paper: {
-    // width: "100%",
-    // height: "min-content",
+    backgroundColor: "rgb(250, 250, 250)",
+  },
+  menuIcon: {
+    padding: 0,
+    "&:hover": {
+      background: "none",
+    },
   },
 }));
 
@@ -117,8 +126,46 @@ export default function Header() {
   const displayDesktop = () => {
     return (
       <Toolbar className={classes.toolbar}>
-        {nameLogo}
-        <div>{getMenuButtons()}</div>
+        <Typography className={classes.IconButtonlogo}>
+          {"<"} <span className={classes.name}>Saifullah Amin</span> {"/>"}
+        </Typography>
+        <div>
+          <Button
+            // key={label}
+            className={classes.menuButton}
+            disableRipple={true}
+          >
+            Home
+          </Button>
+          <Button
+            // key={label}
+            className={classes.menuButton}
+            disableRipple={true}
+          >
+            Education
+          </Button>
+          <Button
+            // key={label}
+            className={classes.menuButton}
+            disableRipple={true}
+          >
+            Experience
+          </Button>
+          <Button
+            // key={label}
+            className={classes.menuButton}
+            disableRipple={true}
+          >
+            Projects
+          </Button>
+          <Button
+            // key={label}
+            className={classes.menuButton}
+            disableRipple={true}
+          >
+            Contact Me
+          </Button>
+        </div>
       </Toolbar>
     );
   };
@@ -131,13 +178,22 @@ export default function Header() {
 
     return (
       <Toolbar className={classes.mobileToolbar}>
-        <div>{nameLogo}</div>
+        <div>
+          <Typography
+            variant="h6"
+            component="h1"
+            className={classes.IconButtonlogo}
+          >
+            {"<"} <span className={classes.name}>Saifullah Amin</span> {"/>"}
+          </Typography>
+        </div>
         <IconButton
           edge="start"
-          color="black"
           aria-label="menu"
           aria-haspopup="true"
           onClick={handleDrawerOpen}
+          className={classes.menuIcon}
+          disableRipple={true}
         >
           <MenuIcon />
         </IconButton>
@@ -147,52 +203,58 @@ export default function Header() {
           open={drawerOpen}
           onClose={handleDrawerClose}
           className={classes.drawer}
-          // flexDirection="none"
           classes={{ paper: classes.paper }}
         >
-          <div className={classes.drawerContainer}>{getDrawerChoices()}</div>
+          <div className={classes.drawerContainer}>
+            <Link
+              style={{ textDecoration: "none" }}
+              // key={label}
+              className={classes.link}
+            >
+              <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
+                Home
+              </MenuItem>
+            </Link>
+            <Link
+              style={{ textDecoration: "none" }}
+              // key={label}
+              className={classes.link}
+            >
+              <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
+                Education
+              </MenuItem>
+            </Link>
+            <Link
+              style={{ textDecoration: "none" }}
+              // key={label}
+              className={classes.link}
+            >
+              <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
+                Experience
+              </MenuItem>
+            </Link>
+            <Link
+              style={{ textDecoration: "none" }}
+              // key={label}
+              className={classes.link}
+            >
+              <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
+                Projects
+              </MenuItem>
+            </Link>
+            <Link
+              style={{ textDecoration: "none" }}
+              // key={label}
+              className={classes.link}
+            >
+              <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
+                Contact Me
+              </MenuItem>
+            </Link>
+          </div>
         </Drawer>
       </Toolbar>
     );
-  };
-
-  const getDrawerChoices = () => {
-    return headersData.map(({ label, href }) => {
-      return (
-        <Link
-          // component: RouterLink,
-          // to: href,
-          color="black"
-          style={{ textDecoration: "none" }}
-          key={label}
-          className={classes.link}
-        >
-          <MenuItem>{label}</MenuItem>
-        </Link>
-      );
-    });
-  };
-
-  const nameLogo = (
-    <Typography variant="h6" component="h1" className={classes.IconButtonlogo}>
-      {"<"}Saifullah Amin{"/>"}
-    </Typography>
-  );
-
-  const getMenuButtons = () => {
-    return headersData.map(({ label, href }) => {
-      return (
-        <Button
-          key={label}
-          color="black"
-          // to: href,
-          // component: RouterLink,
-          className={classes.menuButton}
-        >
-          {label}
-        </Button>
-      );
-    });
   };
 
   return (
