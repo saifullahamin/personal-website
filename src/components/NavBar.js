@@ -14,9 +14,10 @@ import React, { useState, useEffect } from "react";
 import "./NavBar.css";
 
 const useStyles = makeStyles((theme) => ({
+  root: {},
   header: {
     backgroundColor: "rgb(250, 250, 250)",
-    // padding: 3,
+    position: "static",
     [theme.breakpoints.down("sm")]: {
       padding: 0,
     },
@@ -89,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   name: {
-    borderBottom: "1px solid currentColor",
+    borderBottom: "0.7px solid #363636",
     display: "inline-block",
     lineHeight: 0.85,
     color: "#363636",
@@ -113,6 +114,9 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       background: "none",
     },
+  },
+  span: {
+    borderBottom: "0.5px solid rgb(235,235,235)",
   },
 }));
 
@@ -227,7 +231,7 @@ export default function Header() {
               className={classes.link}
             >
               <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
-                Home
+                <span className={classes.span}>Home</span>
               </MenuItem>
             </Link>
             <Link
@@ -236,7 +240,7 @@ export default function Header() {
               className={classes.link}
             >
               <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
-                Education
+                <span className={classes.span}>Education</span>
               </MenuItem>
             </Link>
             <Link
@@ -245,7 +249,7 @@ export default function Header() {
               className={classes.link}
             >
               <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
-                Experience
+                <span className={classes.span}>Experience</span>
               </MenuItem>
             </Link>
             <Link
@@ -254,7 +258,7 @@ export default function Header() {
               className={classes.link}
             >
               <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
-                Projects
+                <span className={classes.span}>Projects</span>
               </MenuItem>
             </Link>
             <Link
@@ -263,7 +267,7 @@ export default function Header() {
               className={classes.link}
             >
               <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
-                Contact Me
+                <span className={classes.span}>Contact Us</span>
               </MenuItem>
             </Link>
           </div>
@@ -273,10 +277,10 @@ export default function Header() {
   };
 
   return (
-    <header>
+    <div className={classes.root}>
       <AppBar className={classes.header}>
         {mobileView ? displayMobile() : displayDesktop()}
       </AppBar>
-    </header>
+    </div>
   );
 }
