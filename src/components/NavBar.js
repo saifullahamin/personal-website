@@ -58,11 +58,18 @@ const useStyles = makeStyles((theme) => ({
     "&:focus": {
       backgroundColor: "rgb(240,240,240)",
     },
+    borderRadius: 5,
     fontSize: 16,
     padding: 3,
-    margin: 14,
+    paddingLeft: 6,
+    paddingRight: 6,
     width: "fit-content",
     minHeight: 0,
+    margin: "auto",
+    marginBottom: 20,
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 15,
+    },
   },
   toolbar: {
     display: "flex",
@@ -70,8 +77,12 @@ const useStyles = makeStyles((theme) => ({
     width: "90%",
     margin: "auto",
   },
-  drawerContainer: {},
-  drawer: {},
+  drawerContainer: {
+    marginTop: 40,
+  },
+  drawer: {
+    textAlign: "center",
+  },
   mobileToolbar: {
     display: "flex",
     justifyContent: "space-between",
@@ -92,6 +103,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     backgroundColor: "rgb(250, 250, 250)",
+    width: "50%",
   },
   menuIcon: {
     padding: 0,
