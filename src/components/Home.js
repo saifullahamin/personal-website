@@ -1,9 +1,14 @@
-// import React, { useRef, useState } from "react";
+/* eslint-disable react/jsx-pascal-case */
+// import React, { useRef, useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import myimage from "../images/saif.png";
 import flag from "../images/pakistan.png";
 // import useWebAnimations from "@wellyshen/use-web-animations";
+import Typist from "react-typist";
+import TypistLoop from "react-typist-loop";
+import "../../node_modules/react-typist/dist/Typist.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -53,10 +58,15 @@ const useStyles = makeStyles((theme) => ({
     width: "fit-content",
     paddingTop: 100,
     margin: "auto",
+    [theme.breakpoints.down("md")]: {
+      paddingTop: 70,
+      //   width: "90%",
+    },
     [theme.breakpoints.down("sm")]: {
-        paddingTop: 50,
-        //   width: "90%",
-      },
+      paddingTop: 50,
+      textAlign: "center",
+      //   width: "90%",
+    },
     [theme.breakpoints.down("xs")]: {
       paddingTop: 30,
       //   width: "90%",
@@ -75,54 +85,54 @@ const useStyles = makeStyles((theme) => ({
   flag: {
     height: 30,
     marginBottom: -6,
+    [theme.breakpoints.down("xs")]: {
+      height: 20,
+      marginBottom: -3,
+    },
     // transform: "rotate(-6deg)",
   },
   skill: {
     // opacity: 0,
   },
+  animationDiv: {
+    display: "flex",
+    fontWeight: 500,
+    fontSize: 30,
+    marginTop: 50,
+    [theme.breakpoints.down("md")]: {
+      fontSize: 25,
+      marginTop: 30,
+    },
+    [theme.breakpoints.down("sm")]: {
+      display: "block",
+      marginTop: 20,
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 14,
+      marginTop: 15,
+    },
+  },
+  typistLoop: {
+    marginLeft: 7,
+  },
 }));
 
 export default function Home() {
   const classes = useStyles();
-  //   const skill = useRef(null);
-  //   let [skillNo, setSkillNo] = useState(1);
 
-  //   const skills = () => {
-  //     if (skillNo == 1) {
-  //       console.log("Start");
-  //       setSkillNo(++skillNo);
-  //       console.log("After");
-  //       return <div>Software Engineering Student</div>;
-  // }
-  // } else if (skillNo == 2) {
-  //   setSkillNo(3);
-  //   return <div className={classes.skill}>React Developer</div>;
-  // } else if (skillNo == 3) {
-  //   setSkillNo(1);
-  //   return <div className={classes.skill}>Cloud Computing Enthusiast</div>;
-  // }
-  // }
-  //   };
+  // const skillRef = useRef(null);
+
   // useWebAnimations({
-  //   ref: skill,
-  //   keyframes: [
-  //     {
-  //       opacity: 1,
-  //     },
-  //     //   { transform: "translateY(-100px)" },
-  //     { transform: "translateY(100px)" },
-  //     { transform: "translateY(-100px)" },
-  //     {
-  //       opacity: 0,
-  //     },
-  //   ],
+  //   ref: skillRef,
+  //   keyframes: [{ opacity: 0 }, { opacity: 1 }, { opacity: 0 }],
   //   timing: {
-  //     //   delay: 9000,
-  //     duration: 2000,
-  //     //   iterations: Infinity,
-  //     //   easing: "ease-in-out",
+  //     duration: 3000,
+  //     easing: "ease-in-out",
+  //     delay: 0,
+  //     iterations: Infinity,
   //   },
   // });
+
   return (
     <div className={classes.root}>
       <Grid container spacing={0} direction="row-reverse">
@@ -142,7 +152,27 @@ export default function Home() {
               from Pakistan{" "}
               <img src={flag} alt="pakistan" className={classes.flag} />
             </div>
-            <div></div>
+            <div className={classes.animationDiv}>
+              <span>I'm a</span>
+              <div className={classes.typistLoop}>
+                <TypistLoop interval={0}>
+                  {[
+                    "Software Engineering Student",
+                    "Programmer",
+                    "React Developer",
+                    "Cloud Computing Enthusiast",
+                  ].map((text) => (
+                    <Typist key={text} startDelay={1000} blink={true}>
+                      {text}
+                      <Typist.Backspace count={text.length} delay={1000} />
+                    </Typist>
+                  ))}
+                </TypistLoop>
+              </div>
+            </div>
+            <div>
+              <FontAwesomeIcon icon={["fal", "coffee"]} />
+            </div>
           </div>
         </Grid>
       </Grid>
