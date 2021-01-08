@@ -8,7 +8,7 @@ import flag from "../images/pakistan.png";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
 import "../../node_modules/react-typist/dist/Typist.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -171,7 +171,7 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <FontAwesomeIcon icon={["fal", "coffee"]} />
+              {/* <FontAwesomeIcon icon={["fal", "coffee"]} /> */}
             </div>
           </div>
         </Grid>
