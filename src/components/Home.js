@@ -8,7 +8,16 @@ import flag from "../images/pakistan.png";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
 import "../../node_modules/react-typist/dist/Typist.css";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faLinkedinIn,
+  faTwitter,
+  faFacebookF,
+  faFacebookMessenger,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: 100,
     margin: "auto",
     [theme.breakpoints.down("md")]: {
-      paddingTop: 70,
+      paddingTop: 60,
       //   width: "90%",
     },
     [theme.breakpoints.down("sm")]: {
@@ -115,6 +124,76 @@ const useStyles = makeStyles((theme) => ({
   typistLoop: {
     marginLeft: 7,
   },
+  socialMedia: {
+    marginTop: 30,
+    [theme.breakpoints.down("xs")]: {
+      marginTop: 20,
+    },
+  },
+  iconSpan: {
+    marginRight: 7,
+    color: "white",
+    borderRadius: "2.6rem",
+    fontSize: 22,
+    transition: "0.5s ease-out",
+    "&:hover": {
+      cursor: "pointer",
+      opacity: 0.6,
+    },
+    [theme.breakpoints.down("md")]: {
+      marginRight: 5,
+      fontSize: 17,
+    },
+    // [theme.breakpoints.down("sm")]: {
+    //   "&:hover": {
+    //     cursor: "pointer",
+    //     opacity: 0.6,
+    //   },
+    // },
+  },
+  whatsapp: {
+    padding: "7px 11.5px",
+    backgroundColor: "#6EE777",
+    [theme.breakpoints.down("md")]: {
+      padding: "5px 8px",
+    },
+  },
+  messenger: {
+    padding: "7px 10.5px",
+    background:
+      "linear-gradient(84.06deg, #0088FF -28.62%, #A033FF 36.39%, #FF5C87 98.74%)",
+    [theme.breakpoints.down("md")]: {
+      padding: "5px 7.3px",
+    },
+  },
+  facebook: {
+    padding: "7px 14.5px",
+    backgroundColor: "#1877F2",
+    [theme.breakpoints.down("md")]: {
+      padding: "5px 10px",
+    },
+  },
+  email: {
+    padding: "7px 10.5px",
+    backgroundColor: "#D93D26",
+    [theme.breakpoints.down("md")]: {
+      padding: "5px 7.3px",
+    },
+  },
+  linkedin: {
+    padding: "7px 11px",
+    backgroundColor: "#0077B5",
+    [theme.breakpoints.down("md")]: {
+      padding: "5px 8px",
+    },
+  },
+  github: {
+    padding: "7px 10.5px",
+    backgroundColor: "#181717",
+    [theme.breakpoints.down("md")]: {
+      padding: "5px 7.3px",
+    },
+  },
 }));
 
 export default function Home() {
@@ -158,7 +237,7 @@ export default function Home() {
                 <TypistLoop interval={0}>
                   {[
                     "Software Engineering Student",
-                    "Programmer",
+                    "Web Designer",
                     "React Developer",
                     "Cloud Computing Enthusiast",
                   ].map((text) => (
@@ -170,8 +249,28 @@ export default function Home() {
                 </TypistLoop>
               </div>
             </div>
-            <div>
-              {/* <FontAwesomeIcon icon={["fal", "coffee"]} /> */}
+            <div className={classes.socialMedia}>
+              <span className={`${classes.iconSpan} ${classes.github}`}>
+                <FontAwesomeIcon icon={faGithub} />
+              </span>
+              <span className={`${classes.iconSpan} ${classes.linkedin}`}>
+                <FontAwesomeIcon icon={faLinkedinIn} />
+              </span>
+              <span className={`${classes.iconSpan} ${classes.email}`}>
+                <FontAwesomeIcon icon={faEnvelope} />
+              </span>
+              <span className={`${classes.iconSpan} ${classes.facebook}`}>
+                <FontAwesomeIcon icon={faFacebookF} />
+              </span>
+              <span className={`${classes.iconSpan} ${classes.messenger}`}>
+                <FontAwesomeIcon icon={faFacebookMessenger} />
+              </span>
+              <span
+                className={`${classes.iconSpan} ${classes.whatsapp}`}
+                style={{ marginRight: 0 }}
+              >
+                <FontAwesomeIcon icon={faWhatsapp} />
+              </span>
             </div>
           </div>
         </Grid>
