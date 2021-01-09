@@ -118,7 +118,7 @@ const useStyles = makeStyles((theme) => ({
   animationDiv: {
     display: "flex",
     fontWeight: 500,
-    fontSize: 29,
+    fontSize: 28,
     marginTop: 30,
     [theme.breakpoints.down("md")]: {
       fontSize: 22,
