@@ -75,11 +75,14 @@ const useStyles = makeStyles((theme) => ({
   text: {
     width: "fit-content",
     margin: "auto",
-
+    paddingBottom: 50,
     // [theme.breakpoints.down("md")]: {
     //   paddingTop: 60,
     //   //   width: "90%",
     // },
+    [theme.breakpoints.down("md")]: {
+      paddingBottom: 0,
+    },
     [theme.breakpoints.down("sm")]: {
       paddingTop: 50,
       textAlign: "center",
@@ -115,7 +118,7 @@ const useStyles = makeStyles((theme) => ({
   animationDiv: {
     display: "flex",
     fontWeight: 500,
-    fontSize: 30,
+    fontSize: 29,
     marginTop: 30,
     [theme.breakpoints.down("md")]: {
       fontSize: 22,
