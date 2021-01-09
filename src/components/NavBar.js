@@ -115,9 +115,6 @@ const useStyles = makeStyles((theme) => ({
       background: "none",
     },
   },
-  span: {
-    borderBottom: "0.5px solid rgb(235,235,235)",
-  },
 }));
 
 export default function Header() {
@@ -231,7 +228,7 @@ export default function Header() {
               className={classes.link}
             >
               <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
-                <span className={classes.span}>Home</span>
+                Home
               </MenuItem>
             </Link>
             <Link
@@ -240,7 +237,7 @@ export default function Header() {
               className={classes.link}
             >
               <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
-                <span className={classes.span}>Education</span>
+                Education
               </MenuItem>
             </Link>
             <Link
@@ -249,7 +246,7 @@ export default function Header() {
               className={classes.link}
             >
               <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
-                <span className={classes.span}>Experience</span>
+                Experience
               </MenuItem>
             </Link>
             <Link
@@ -258,7 +255,7 @@ export default function Header() {
               className={classes.link}
             >
               <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
-                <span className={classes.span}>Projects</span>
+                Projects
               </MenuItem>
             </Link>
             <Link
@@ -267,7 +264,7 @@ export default function Header() {
               className={classes.link}
             >
               <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
-                <span className={classes.span}>Contact Us</span>
+                Contact Us
               </MenuItem>
             </Link>
           </div>
