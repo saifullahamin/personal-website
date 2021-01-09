@@ -264,7 +264,7 @@ export default function Header() {
               className={classes.link}
             >
               <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
-                Contact Us
+                Contact Me
               </MenuItem>
             </Link>
           </div>

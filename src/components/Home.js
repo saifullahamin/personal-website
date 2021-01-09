@@ -17,6 +17,7 @@ import {
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,8 +25,11 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 110,
     fontFamily: "Quicksand, sans-serif",
     color: "#363636",
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       marginTop: 60,
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginTop: 40,
     },
   },
   myimage: {
@@ -62,14 +66,20 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 23,
     },
   },
+  textGrid: {
+    // display: "relative",
+    display: "flex",
+    alignContent: "center",
+    alignItems: "center",
+  },
   text: {
     width: "fit-content",
-    paddingTop: 100,
     margin: "auto",
-    [theme.breakpoints.down("md")]: {
-      paddingTop: 60,
-      //   width: "90%",
-    },
+
+    // [theme.breakpoints.down("md")]: {
+    //   paddingTop: 60,
+    //   //   width: "90%",
+    // },
     [theme.breakpoints.down("sm")]: {
       paddingTop: 50,
       textAlign: "center",
@@ -106,7 +116,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     fontWeight: 500,
     fontSize: 30,
-    marginTop: 40,
+    marginTop: 30,
     [theme.breakpoints.down("md")]: {
       fontSize: 22,
       marginTop: 20,
@@ -196,6 +206,39 @@ const useStyles = makeStyles((theme) => ({
       padding: "5px 7.3px",
     },
   },
+  resume: {
+    color: "white",
+    marginTop: 30,
+    background: "#2F2F2F",
+    transition: "0.5s ease-out",
+    fontSize: 20,
+    fontFamily: "Quicksand, sans-serif",
+    fontWeight: 600,
+    padding: "4px 16px",
+    borderRadius: 6,
+    "&:after": {
+      background: "none",
+    },
+    "&:hover": {
+      background: "white",
+      color: "black",
+    },
+    textTransform: "none",
+    [theme.breakpoints.down("md")]: {
+      fontSize: 18,
+      padding: "3px 14px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: 16,
+      padding: "2.5px 12px",
+      marginTop: 20,
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 15,
+      padding: "2px 11px",
+      marginTop: 20,
+    },
+  },
 }));
 
 export default function Home() {
@@ -226,9 +269,9 @@ export default function Home() {
             />
           </div>
         </Grid>
-        <Grid item xs={12} sm={12} md={6}>
+        <Grid item xs={12} sm={12} md={6} className={classes.textGrid}>
           <div className={classes.text}>
-            <div className={classes.greetings}>Hi! I am Saifullah Amin</div>
+            <div className={classes.greetings}>Hi! its Saifullah Amin</div>
             <div className={classes.country}>
               from Pakistan{" "}
               <img src={flag} alt="pakistan" className={classes.flag} />
@@ -274,6 +317,9 @@ export default function Home() {
                 <FontAwesomeIcon icon={faWhatsapp} />
               </span>
             </div>
+            <Button className={classes.resume} variant="outlined">
+              Resume
+            </Button>
           </div>
         </Grid>
       </Grid>
