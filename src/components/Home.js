@@ -84,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 500,
     fontSize: 30,
     [theme.breakpoints.down("md")]: {
-      fontSize: 25,
+      fontSize: 20,
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: 16,
@@ -106,10 +106,10 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     fontWeight: 500,
     fontSize: 30,
-    marginTop: 50,
+    marginTop: 40,
     [theme.breakpoints.down("md")]: {
-      fontSize: 25,
-      marginTop: 30,
+      fontSize: 22,
+      marginTop: 20,
     },
     [theme.breakpoints.down("sm")]: {
       display: "block",
@@ -125,6 +125,9 @@ const useStyles = makeStyles((theme) => ({
   },
   socialMedia: {
     marginTop: 30,
+    [theme.breakpoints.down("md")]: {
+      marginTop: 22,
+    },
     [theme.breakpoints.down("xs")]: {
       marginTop: 20,
     },
@@ -143,12 +146,12 @@ const useStyles = makeStyles((theme) => ({
       marginRight: 5,
       fontSize: 17,
     },
-    // [theme.breakpoints.down("sm")]: {
-    //   "&:hover": {
-    //     cursor: "pointer",
-    //     opacity: 0.6,
-    //   },
-    // },
+    [theme.breakpoints.down("sm")]: {
+      "&:hover": {
+        cursor: "pointer",
+        opacity: 1,
+      },
+    },
   },
   whatsapp: {
     padding: "7px 11.5px",
