@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-pascal-case */
-// import React, { useRef, useState, useEffect } from "react";
+// import React, { useRef } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import myimage from "../images/saif.png";
@@ -18,6 +18,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import Button from "@material-ui/core/Button";
+import Fade from "react-reveal/Fade";
+// import { Fade } from "react-awesome-reveal";
+// import Reveal from "react-reveal";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -255,85 +258,92 @@ const useStyles = makeStyles((theme) => ({
 export default function Home() {
   const classes = useStyles();
 
-  // const skillRef = useRef(null);
+  // const homeRef = useRef(null);
 
   // useWebAnimations({
-  //   ref: skillRef,
-  //   keyframes: [{ opacity: 0 }, { opacity: 1 }, { opacity: 0 }],
+  //   ref: homeRef,
+  //   keyframes: [
+  //     { opacity: 0 },
+  //     { transform: "translateY(100px)" },
+  //     { opacity: 1 },
+  //     { transform: "translateY(0px)" },
+  //   ],
   //   timing: {
   //     duration: 3000,
   //     easing: "ease-in-out",
   //     delay: 0,
-  //     iterations: Infinity,
+  //     iterations: 1,
   //   },
   // });
 
   return (
-    <div className={classes.root}>
-      <Grid container spacing={0} direction="row-reverse">
-        <Grid item xs={12} sm={12} md={6} className={classes.imageGrid}>
-          <div className={classes.myImageDiv}>
-            <img
-              src={myimage}
-              className={classes.myimage}
-              alt="Saifullah Amin"
-            />
-          </div>
-        </Grid>
-        <Grid item xs={12} sm={12} md={6} className={classes.textGrid}>
-          <div className={classes.text}>
-            <div className={classes.greetings}>Hi! its Saifullah Amin</div>
-            <div className={classes.country}>
-              from Pakistan{" "}
-              <img src={flag} alt="pakistan" className={classes.flag} />
+    <Fade bottom distance={"15px"} duration={3000}>
+      <div className={classes.root}>
+        <Grid container spacing={0} direction="row-reverse">
+          <Grid item xs={12} sm={12} md={6} className={classes.imageGrid}>
+            <div className={classes.myImageDiv}>
+              <img
+                src={myimage}
+                className={classes.myimage}
+                alt="Saifullah Amin"
+              />
             </div>
-            <div className={classes.animationDiv}>
-              <span>I'm a</span>
-              <div className={classes.typistLoop}>
-                <TypistLoop interval={0}>
-                  {[
-                    "Software Engineering Student",
-                    "Web Designer",
-                    "React Developer",
-                    "Cloud Computing Enthusiast",
-                  ].map((text) => (
-                    <Typist key={text} startDelay={1000} blink={true}>
-                      {text}
-                      <Typist.Backspace count={text.length} delay={1000} />
-                    </Typist>
-                  ))}
-                </TypistLoop>
+          </Grid>
+          <Grid item xs={12} sm={12} md={6} className={classes.textGrid}>
+            <div className={classes.text}>
+              <div className={classes.greetings}>Hi! its Saifullah Amin</div>
+              <div className={classes.country}>
+                from Pakistan{" "}
+                <img src={flag} alt="pakistan" className={classes.flag} />
               </div>
+              <div className={classes.animationDiv}>
+                <span>I'm a</span>
+                <div className={classes.typistLoop}>
+                  <TypistLoop interval={0}>
+                    {[
+                      "Software Engineering Student",
+                      "Frontend Developer",
+                      "React Developer",
+                      "Cloud Computing Enthusiast",
+                    ].map((text) => (
+                      <Typist key={text} startDelay={1000} blink={true}>
+                        {text}
+                        <Typist.Backspace count={text.length} delay={1000} />
+                      </Typist>
+                    ))}
+                  </TypistLoop>
+                </div>
+              </div>
+              <div className={classes.socialMedia}>
+                <span className={`${classes.iconSpan} ${classes.github}`}>
+                  <FontAwesomeIcon icon={faGithub} />
+                </span>
+                <span className={`${classes.iconSpan} ${classes.linkedin}`}>
+                  <FontAwesomeIcon icon={faLinkedinIn} />
+                </span>
+                <span className={`${classes.iconSpan} ${classes.email}`}>
+                  <FontAwesomeIcon icon={faEnvelope} />
+                </span>
+                <span className={`${classes.iconSpan} ${classes.facebook}`}>
+                  <FontAwesomeIcon icon={faFacebookF} />
+                </span>
+                <span className={`${classes.iconSpan} ${classes.messenger}`}>
+                  <FontAwesomeIcon icon={faFacebookMessenger} />
+                </span>
+                <span
+                  className={`${classes.iconSpan} ${classes.whatsapp}`}
+                  style={{ marginRight: 0 }}
+                >
+                  <FontAwesomeIcon icon={faWhatsapp} />
+                </span>
+              </div>
+              <Button className={classes.resume} variant="outlined">
+                Resume
+              </Button>
             </div>
-            <div className={classes.socialMedia}>
-              <span className={`${classes.iconSpan} ${classes.github}`}>
-                <FontAwesomeIcon icon={faGithub} />
-              </span>
-              <span className={`${classes.iconSpan} ${classes.linkedin}`}>
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </span>
-              <span className={`${classes.iconSpan} ${classes.email}`}>
-                <FontAwesomeIcon icon={faEnvelope} />
-              </span>
-              <span className={`${classes.iconSpan} ${classes.facebook}`}>
-                <FontAwesomeIcon icon={faFacebookF} />
-              </span>
-              <span className={`${classes.iconSpan} ${classes.messenger}`}>
-                <FontAwesomeIcon icon={faFacebookMessenger} />
-              </span>
-              <span
-                className={`${classes.iconSpan} ${classes.whatsapp}`}
-                style={{ marginRight: 0 }}
-              >
-                <FontAwesomeIcon icon={faWhatsapp} />
-              </span>
-            </div>
-            <Button className={classes.resume} variant="outlined">
-              Resume
-            </Button>
-          </div>
+          </Grid>
         </Grid>
-      </Grid>
-    </div>
+      </div>
+    </Fade>
   );
 }
