@@ -56,9 +56,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   mobileMenuItem: {
-    "&:focus": {
-      backgroundColor: "rgb(240,240,240)",
-    },
     borderRadius: 5,
     fontSize: 16,
     padding: 3,
@@ -67,7 +64,6 @@ const useStyles = makeStyles((theme) => ({
     width: "fit-content",
     minHeight: 0,
     margin: "auto",
-    marginBottom: 20,
     [theme.breakpoints.down("xs")]: {
       fontSize: 15,
     },
@@ -83,6 +79,17 @@ const useStyles = makeStyles((theme) => ({
   },
   drawer: {
     textAlign: "center",
+  },
+  drawerDiv: {
+    borderBottom: "0.3px solid #D7D6D6",
+    borderTop: "0.3px solid #D7D6D6",
+    // background: "black",
+    marginBottom: 30,
+    padding: 8,
+    [theme.breakpoints.down("xs")]: {
+      marginBottom: 25,
+      padding: 1,
+    },
   },
   mobileToolbar: {
     display: "flex",
@@ -101,6 +108,9 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Quicksand, sans-serif",
     color: "#363636",
     fontSize: 10,
+    "&:hover": {
+      cursor: "pointer",
+    },
   },
   paper: {
     backgroundColor: "rgb(250, 250, 250)",
@@ -227,45 +237,75 @@ export default function Header() {
               // key={label}
               className={classes.link}
             >
-              <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
-                Home
-              </MenuItem>
+              <div className={classes.drawerDiv}>
+                <MenuItem
+                  disableRipple={true}
+                  className={classes.mobileMenuItem}
+                  style={{ background: "none" }}
+                >
+                  Home
+                </MenuItem>
+              </div>
             </Link>
             <Link
               style={{ textDecoration: "none" }}
               // key={label}
               className={classes.link}
             >
-              <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
-                Education
-              </MenuItem>
+              <div className={classes.drawerDiv}>
+                <MenuItem
+                  disableRipple={true}
+                  className={classes.mobileMenuItem}
+                  style={{ background: "none" }}
+                >
+                  Education
+                </MenuItem>
+              </div>
             </Link>
             <Link
               style={{ textDecoration: "none" }}
               // key={label}
               className={classes.link}
             >
-              <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
-                Experience
-              </MenuItem>
+              <div className={classes.drawerDiv}>
+                <MenuItem
+                  disableRipple={true}
+                  className={classes.mobileMenuItem}
+                  style={{ background: "none" }}
+                >
+                  Experience
+                </MenuItem>
+              </div>
             </Link>
             <Link
               style={{ textDecoration: "none" }}
               // key={label}
               className={classes.link}
             >
-              <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
-                Projects
-              </MenuItem>
+              <div className={classes.drawerDiv}>
+                <MenuItem
+                  disableRipple={true}
+                  className={classes.mobileMenuItem}
+                  style={{ background: "none" }}
+                >
+                  Projects
+                </MenuItem>
+              </div>
             </Link>
             <Link
               style={{ textDecoration: "none" }}
               // key={label}
               className={classes.link}
             >
-              <MenuItem disableRipple={true} className={classes.mobileMenuItem}>
-                Contact Me
-              </MenuItem>
+              <div className={classes.drawerDiv}>
+                <MenuItem
+                  disableRipple={true}
+                  className={classes.mobileMenuItem}
+                  style={{ background: "none" }}
+                >
+                  Contact Me
+                </MenuItem>
+              </div>
             </Link>
           </div>
         </Drawer>
