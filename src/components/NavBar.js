@@ -70,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 500,
     margin: "auto",
     [theme.breakpoints.down("xs")]: {
-      fontSize: 15,
+      fontSize: 13,
     },
   },
   toolbar: {

@@ -138,7 +138,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: 14,
-      marginTop: 15,
+      marginTop: 8,
     },
   },
   typistLoop: {
