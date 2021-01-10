@@ -163,6 +163,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "2.6rem",
     fontSize: 22,
     transition: "0.5s ease-out",
+    userSelect: "none",
     "&:hover": {
       cursor: "pointer",
       opacity: 0.6,
@@ -329,7 +330,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faLinkedinIn} />
                   </span>
                 </a>
-                <a href="mailto::saifullahaminkhan@gmail.com" target="_blank">
+                <a href="mailto:saifullahaminkhan@gmail.com" target="_blank">
                   <span className={`${classes.iconSpan} ${classes.email}`}>
                     <FontAwesomeIcon icon={faEnvelope} />
                   </span>
