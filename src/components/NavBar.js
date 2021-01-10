@@ -63,6 +63,8 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: 6,
     width: "fit-content",
     minHeight: 0,
+    fontFamily: "Quicksand, sans-serif",
+    fontWeight: 500,
     margin: "auto",
     [theme.breakpoints.down("xs")]: {
       fontSize: 15,
@@ -90,6 +92,10 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: 25,
       padding: 3,
     },
+    "&:hover": {
+      cursor: "pointer",
+      background: "rgb(240,240,240)",
+    },
   },
   mobileToolbar: {
     display: "flex",
@@ -108,9 +114,6 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Quicksand, sans-serif",
     color: "#363636",
     fontSize: 10,
-    "&:hover": {
-      cursor: "pointer",
-    },
   },
   paper: {
     backgroundColor: "rgb(250, 250, 250)",
@@ -219,7 +222,7 @@ export default function Header() {
           aria-haspopup="true"
           onClick={handleDrawerOpen}
           className={classes.menuIcon}
-          disableRipple={true}
+          // disableRipple={true}
         >
           <MenuIcon />
         </IconButton>

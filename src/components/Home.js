@@ -160,10 +160,10 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 17,
     },
     [theme.breakpoints.down("sm")]: {
-      "&:hover": {
-        cursor: "pointer",
-        opacity: 1,
-      },
+      // "&:hover": {
+      //   cursor: "pointer",
+      //   opacity: 1,
+      // },
     },
   },
   whatsapp: {
