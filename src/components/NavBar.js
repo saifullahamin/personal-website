@@ -37,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 27,
       paddingLeft: 4,
     },
+    "@media (max-width:300px)": {
+      fontSize: 24,
+    },
   },
   menuButton: {
     minWidth: 0,

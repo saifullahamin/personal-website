@@ -36,16 +36,24 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   myImageDiv: {
-    width: "60%",
+    width: 550,
+    height: 550,
     margin: "auto",
     [theme.breakpoints.down("md")]: {
-      width: "70%",
+      width: 400,
+      height: 400,
     },
-    [theme.breakpoints.down("md")]: {
-      width: "60%",
+    [theme.breakpoints.down("sm")]: {
+      width: 400,
+      height: 400,
     },
     [theme.breakpoints.down("xs")]: {
-      width: "80%",
+      width: 300,
+      height: 300,
+    },
+    "@media (max-width:300px)": {
+      width: 250,
+      height: 250,
     },
   },
   imageGrid: {
