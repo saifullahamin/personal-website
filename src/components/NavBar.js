@@ -81,14 +81,14 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   drawerDiv: {
-    borderBottom: "0.3px solid #D7D6D6",
-    borderTop: "0.3px solid #D7D6D6",
+    borderBottom: "0.3px solid #F0EDED",
+    borderTop: "0.3px solid #F0EDED",
     // background: "black",
     marginBottom: 30,
     padding: 8,
     [theme.breakpoints.down("xs")]: {
       marginBottom: 25,
-      padding: 1,
+      padding: 3,
     },
   },
   mobileToolbar: {
