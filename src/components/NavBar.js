@@ -81,8 +81,8 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   drawerDiv: {
-    borderBottom: "0.3px solid #F0EDED",
-    borderTop: "0.3px solid #F0EDED",
+    borderBottom: "0.3px solid #DEDADA",
+    borderTop: "0.3px solid #DEDADA",
     // background: "black",
     marginBottom: 30,
     padding: 8,
