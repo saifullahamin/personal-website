@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable react/jsx-pascal-case */
 // import React, { useRef } from "react";
 import { makeStyles } from "@material-ui/core/styles";
@@ -315,27 +316,48 @@ export default function Home() {
                 </div>
               </div>
               <div className={classes.socialMedia}>
-                <span className={`${classes.iconSpan} ${classes.github}`}>
-                  <FontAwesomeIcon icon={faGithub} />
-                </span>
-                <span className={`${classes.iconSpan} ${classes.linkedin}`}>
-                  <FontAwesomeIcon icon={faLinkedinIn} />
-                </span>
-                <span className={`${classes.iconSpan} ${classes.email}`}>
-                  <FontAwesomeIcon icon={faEnvelope} />
-                </span>
-                <span className={`${classes.iconSpan} ${classes.facebook}`}>
-                  <FontAwesomeIcon icon={faFacebookF} />
-                </span>
-                <span className={`${classes.iconSpan} ${classes.messenger}`}>
-                  <FontAwesomeIcon icon={faFacebookMessenger} />
-                </span>
-                <span
-                  className={`${classes.iconSpan} ${classes.whatsapp}`}
-                  style={{ marginRight: 0 }}
+                <a href="https://github.com/saifullahamin" target="_blank">
+                  <span className={`${classes.iconSpan} ${classes.github}`}>
+                    <FontAwesomeIcon icon={faGithub} />
+                  </span>
+                </a>
+                <a
+                  href="https://linkedin.com/in/saifullah-amin"
+                  target="_blank"
                 >
-                  <FontAwesomeIcon icon={faWhatsapp} />
-                </span>
+                  <span className={`${classes.iconSpan} ${classes.linkedin}`}>
+                    <FontAwesomeIcon icon={faLinkedinIn} />
+                  </span>
+                </a>
+                <a href="mailto::saifullahaminkhan@gmail.com" target="_blank">
+                  <span className={`${classes.iconSpan} ${classes.email}`}>
+                    <FontAwesomeIcon icon={faEnvelope} />
+                  </span>
+                </a>
+                <a
+                  href="https://facebook.com/saifullahaminkhan"
+                  target="_blank"
+                >
+                  <span className={`${classes.iconSpan} ${classes.facebook}`}>
+                    <FontAwesomeIcon icon={faFacebookF} />
+                  </span>
+                </a>
+                <a href="https://m.me/saifullahaminkhan" target="_blank">
+                  <span className={`${classes.iconSpan} ${classes.messenger}`}>
+                    <FontAwesomeIcon icon={faFacebookMessenger} />
+                  </span>
+                </a>
+                <a
+                  href="whatsapp://send?phone=923139740496"
+                  target="_blank"
+                >
+                  <span
+                    className={`${classes.iconSpan} ${classes.whatsapp}`}
+                    style={{ marginRight: 0 }}
+                  >
+                    <FontAwesomeIcon icon={faWhatsapp} />
+                  </span>
+                </a>
               </div>
               <Button className={classes.resume} variant="outlined">
                 Resume
