@@ -172,10 +172,10 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 17,
     },
     [theme.breakpoints.down("sm")]: {
-      // "&:hover": {
-      //   cursor: "pointer",
-      //   opacity: 1,
-      // },
+      "&:hover": {
+        cursor: "pointer",
+        opacity: 1,
+      },
     },
   },
   whatsapp: {
@@ -347,10 +347,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faFacebookMessenger} />
                   </span>
                 </a>
-                <a
-                  href="whatsapp://send?phone=923139740496"
-                  target="_blank"
-                >
+                <a href="whatsapp://send?phone=923139740946" target="_blank">
                   <span
                     className={`${classes.iconSpan} ${classes.whatsapp}`}
                     style={{ marginRight: 0 }}
