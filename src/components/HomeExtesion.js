@@ -20,7 +20,7 @@ import vscode from "../images/vscode.png";
 import wordpress from "../images/wordpress.svg";
 import Zoom from "react-reveal/Zoom";
 
-import "@lottiefiles/lottie-player";
+// import "@lottiefiles/lottie-player";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -281,7 +281,7 @@ const useStyles = makeStyles((theme) => ({
     },
     "@media (max-width:350px)": {
       marginBottom: 6,
-    }
+    },
   },
   levelGrid: {},
   toolsGrid: {},
