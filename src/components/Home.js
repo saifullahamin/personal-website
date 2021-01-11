@@ -20,8 +20,6 @@ import {
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import Button from "@material-ui/core/Button";
 import Fade from "react-reveal/Fade";
-// import { Fade } from "react-awesome-reveal";
-// import Reveal from "react-reveal";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -55,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
       width: 300,
       height: 300,
     },
-    "@media (max-width:300px)": {
+    "@media (max-width:350px)": {
       width: 250,
       height: 250,
     },
@@ -163,7 +161,6 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "2.6rem",
     fontSize: 22,
     transition: "0.5s ease-out",
-    userSelect: "none",
     "&:hover": {
       cursor: "pointer",
       opacity: 0.6,
@@ -279,7 +276,7 @@ export default function Home() {
   // });
 
   return (
-    <Fade bottom distance={"15px"} duration={3000}>
+    <Fade bottom distance={"15px"} duration={2000}>
       <div className={classes.root}>
         <Grid container spacing={0} direction="row-reverse">
           <Grid item xs={12} sm={12} md={6} className={classes.imageGrid}>
