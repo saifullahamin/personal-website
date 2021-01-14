@@ -4,7 +4,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import myimage from "../images/saif.png";
-import flag from "../images/pakistan.png";
 // import useWebAnimations from "@wellyshen/use-web-animations";
 import Typist from "react-typist";
 import TypistLoop from "react-typist-loop";
@@ -20,6 +19,7 @@ import {
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import Button from "@material-ui/core/Button";
 import Fade from "react-reveal/Fade";
+import HomeExtension from "./HomeExtesion";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -257,27 +257,9 @@ const useStyles = makeStyles((theme) => ({
 export default function Home() {
   const classes = useStyles();
 
-  // const homeRef = useRef(null);
-
-  // useWebAnimations({
-  //   ref: homeRef,
-  //   keyframes: [
-  //     { opacity: 0 },
-  //     { transform: "translateY(100px)" },
-  //     { opacity: 1 },
-  //     { transform: "translateY(0px)" },
-  //   ],
-  //   timing: {
-  //     duration: 3000,
-  //     easing: "ease-in-out",
-  //     delay: 0,
-  //     iterations: 1,
-  //   },
-  // });
-
   return (
-    <Fade bottom distance={"15px"} duration={2000}>
-      <div className={classes.root}>
+    <div className={classes.root}>
+      <Fade bottom distance={"15px"} duration={2000}>
         <Grid container spacing={0} direction="row-reverse">
           <Grid item xs={12} sm={12} md={6} className={classes.imageGrid}>
             <div className={classes.myImageDiv}>
@@ -293,7 +275,11 @@ export default function Home() {
               <div className={classes.greetings}>Hi! its Saifullah Amin</div>
               <div className={classes.country}>
                 from Pakistan{" "}
-                <img src={flag} alt="pakistan" className={classes.flag} />
+                <img
+                  className={classes.flag}
+                  src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiM3M0FGMDA7IiBkPSJNNDczLjY1NSw4OC4yNzVIMTMyLjQxNHYzMzUuNDQ4aDM0MS4yNDFjMjEuMTc3LDAsMzguMzQ1LTE3LjE2NywzOC4zNDUtMzguMzQ1VjEyNi42Mg0KCUM1MTIsMTA1LjQ0Miw0OTQuODMzLDg4LjI3NSw0NzMuNjU1LDg4LjI3NXoiLz4NCjxnPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNMzguMzQ1LDg4LjI3NUMxNy4xNjcsODguMjc1LDAsMTA1LjQ0MiwwLDEyNi42MlYzODUuMzhjMCwyMS4xNzcsMTcuMTY3LDM4LjM0NSwzOC4zNDUsMzguMzQ1DQoJCWg5NC4wNjlWODguMjc1SDM4LjM0NXoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRjVGNUY1OyIgZD0iTTQxMi4wNTMsMzAyLjE4OGMtNDAuNjMyLDM2LjE5Ni0xMDIuODMzLDMyLjQ3Ny0xMzguOTU2LTguMjI3DQoJCWMtMzYuMDU0LTQwLjYyOS0zMi40MDUtMTAzLjAxLDguMjI2LTEzOS4yMDRjMC4wNi0wLjA1MywwLjExOC0wLjEwNSwwLjE3OC0wLjE1N2MwLjk2LTAuODQ0LDAuMDMyLTIuMzc3LTEuMTYtMS45MTMNCgkJYy00MC4wNywxNS42MDQtNjguNDc5LDU0LjU3OS02OC40NzksMTAwLjIxNGMwLDU5LjQ0NCw0OC4wNzEsMTA3LjU4NywxMDcuMzczLDEwNy41ODdjNDEuMDIzLDAsNzYuNTc0LTIzLjA4Myw5NC42MzMtNTYuOTY5DQoJCWMwLjYwMi0xLjEzMS0wLjgxLTIuMjMxLTEuNzY2LTEuMzc3QzQxMi4wODcsMzAyLjE1Niw0MTIuMDY5LDMwMi4xNzIsNDEyLjA1MywzMDIuMTg4eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGNUY1RjU7IiBkPSJNMzU5Ljc4NywxNzIuNTg5bDE0LjEyLDE1Ljg0MWwxOS41Ni04LjIzMmMyLjUzMi0xLjA2Niw0Ljk2NCwxLjcwNSwzLjU3OCw0LjA3N0wzODYuMzQyLDIwMi42DQoJCWwxMy44NzMsMTYuMDU4YzEuNzk2LDIuMDc5LTAuMDg4LDUuMjQ4LTIuNzcyLDQuNjYzbC0yMC43MzUtNC41MTZsLTEwLjk4NiwxOC4xNTZjLTEuNDIyLDIuMzUtNS4wMTgsMS41MzgtNS4yOTItMS4xOTYNCgkJbC0yLjExMi0yMS4xMTZsLTIwLjY2Mi00LjgzOGMtMi42NzUtMC42MjctMy4wMTQtNC4yOTctMC40OTgtNS40MDJsMTkuNDMtOC41MzNsLTEuNzg0LTIxLjE0NQ0KCQlDMzU0LjU3MiwxNzEuOTkzLDM1Ny45NiwxNzAuNTM4LDM1OS43ODcsMTcyLjU4OXoiLz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K"
+                  alt="pakistan"
+                />
               </div>
               <div className={classes.animationDiv}>
                 <span>I'm a</span>
@@ -302,7 +288,6 @@ export default function Home() {
                     {[
                       "Software Engineering Student",
                       "Frontend Developer",
-                      "React Developer",
                       "Cloud Computing Enthusiast",
                     ].map((text) => (
                       <Typist key={text} startDelay={1000} blink={true}>
@@ -360,7 +345,8 @@ export default function Home() {
             </div>
           </Grid>
         </Grid>
-      </div>
-    </Fade>
+      </Fade>
+      <HomeExtension />
+    </div>
   );
 }

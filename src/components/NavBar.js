@@ -12,9 +12,11 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
 import "./NavBar.css";
+import { useNavigate, NavLink } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
+  root: {
+  },
   header: {
     backgroundColor: "rgb(250, 250, 250)",
     position: "static",
@@ -78,6 +80,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     width: "90%",
     margin: "auto",
+    paddingTop: 5,
+    paddingBottom: 5,
   },
   drawerContainer: {
     marginTop: 40,
@@ -131,10 +135,19 @@ const useStyles = makeStyles((theme) => ({
       background: "none",
     },
   },
+  navLink: {
+    color: "none",
+    // cursor: pointer;
+    textDecoration: "none",
+  },
+  active: {
+    color: "blue",
+  },
 }));
 
 export default function Header() {
   const classes = useStyles();
+  const navigate = useNavigate();
 
   const [state, setState] = useState({
     mobileView: false,
@@ -162,17 +175,22 @@ export default function Header() {
           {"<"} <span className={classes.name}>Saifullah Amin</span> {"/>"}
         </Typography>
         <div>
+          <NavLink className={classes.navLink} to="/" activeClassName="active">
+            <Button
+              // key={label}
+              // onClick={() => navigate("/")}
+              className={classes.menuButton}
+              disableRipple={true}
+            >
+              Home
+            </Button>
+          </NavLink>
+
           <Button
             // key={label}
             className={classes.menuButton}
             disableRipple={true}
-          >
-            Home
-          </Button>
-          <Button
-            // key={label}
-            className={classes.menuButton}
-            disableRipple={true}
+            onClick={() => navigate("education")}
           >
             Education
           </Button>
@@ -180,6 +198,7 @@ export default function Header() {
             // key={label}
             className={classes.menuButton}
             disableRipple={true}
+            onClick={() => navigate("experience")}
           >
             Experience
           </Button>
@@ -187,6 +206,7 @@ export default function Header() {
             // key={label}
             className={classes.menuButton}
             disableRipple={true}
+            onClick={() => navigate("projects")}
           >
             Projects
           </Button>
@@ -194,6 +214,7 @@ export default function Header() {
             // key={label}
             className={classes.menuButton}
             disableRipple={true}
+            onClick={() => navigate("contact")}
           >
             Contact Me
           </Button>
@@ -242,6 +263,10 @@ export default function Header() {
               style={{ textDecoration: "none" }}
               // key={label}
               className={classes.link}
+              onClick={() => {
+                handleDrawerClose();
+                navigate("/");
+              }}
             >
               <div className={classes.drawerDiv}>
                 <MenuItem
@@ -254,6 +279,10 @@ export default function Header() {
               </div>
             </Link>
             <Link
+              onClick={() => {
+                handleDrawerClose();
+                navigate("education");
+              }}
               style={{ textDecoration: "none" }}
               // key={label}
               className={classes.link}
@@ -269,6 +298,10 @@ export default function Header() {
               </div>
             </Link>
             <Link
+              onClick={() => {
+                handleDrawerClose();
+                navigate("experience");
+              }}
               style={{ textDecoration: "none" }}
               // key={label}
               className={classes.link}
@@ -284,6 +317,10 @@ export default function Header() {
               </div>
             </Link>
             <Link
+              onClick={() => {
+                handleDrawerClose();
+                navigate("projects");
+              }}
               style={{ textDecoration: "none" }}
               // key={label}
               className={classes.link}
@@ -299,6 +336,10 @@ export default function Header() {
               </div>
             </Link>
             <Link
+              onClick={() => {
+                handleDrawerClose();
+                navigate("contact");
+              }}
               style={{ textDecoration: "none" }}
               // key={label}
               className={classes.link}
