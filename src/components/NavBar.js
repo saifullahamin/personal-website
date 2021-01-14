@@ -12,7 +12,7 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
 import "./NavBar.css";
-import { useNavigate, NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {},
   IconButtonlogo: {
+    WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
     color: "#363636",
     fontFamily: "Sacramento, cursive",
     fontStyle: "italic",
@@ -41,6 +42,9 @@ const useStyles = makeStyles((theme) => ({
     },
     "@media (max-width:300px)": {
       fontSize: 24,
+    },
+    "&:hover": {
+      cursor: "pointer",
     },
   },
   menuButton: {
@@ -171,20 +175,20 @@ export default function Header() {
   const displayDesktop = () => {
     return (
       <Toolbar className={classes.toolbar}>
-        <Typography className={classes.IconButtonlogo}>
+        <Typography className={classes.IconButtonlogo} onClick={() => navigate("/")}>
           {"<"} <span className={classes.name}>Saifullah Amin</span> {"/>"}
         </Typography>
         <div>
-          <NavLink className={classes.navLink} to="/" activeClassName="active">
+          {/* <NavLink className={classes.navLink} to="/" activeClassName="active"> */}
             <Button
               // key={label}
-              // onClick={() => navigate("/")}
+              onClick={() => navigate("/")}
               className={classes.menuButton}
               disableRipple={true}
             >
               Home
             </Button>
-          </NavLink>
+          {/* </NavLink> */}
 
           <Button
             // key={label}
@@ -236,6 +240,7 @@ export default function Header() {
             variant="h6"
             component="h1"
             className={classes.IconButtonlogo}
+            onClick={() => navigate("/")}
           >
             {"<"} <span className={classes.name}>Saifullah Amin</span> {"/>"}
           </Typography>

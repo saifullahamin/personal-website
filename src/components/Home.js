@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable react/jsx-pascal-case */
 // import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import myimage from "../images/saif.png";
@@ -256,6 +257,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Home() {
   const classes = useStyles();
+  const navigate = useNavigate();
 
   return (
     <div className={classes.root}>
@@ -339,7 +341,12 @@ export default function Home() {
                   </span>
                 </a>
               </div>
-              <Button className={classes.resume} variant="outlined">
+              <Button
+                onClick={() => navigate("resume")}
+                className={classes.resume}
+                variant="outlined"
+                target="_blank"
+              >
                 Resume
               </Button>
             </div>
